@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
     const client = await clientPromise;
     const id = parseInt(event.path.split("/").reverse()[0]);
     const data = JSON.parse(event.body);
-	console.log(event.body)
+    console.log(event.body)
 
     await client.db("bookstore").collection("books").updateOne({_id:id},{$set:data});
 

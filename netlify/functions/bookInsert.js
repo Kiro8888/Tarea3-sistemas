@@ -10,12 +10,12 @@ exports.handler = async (event, context) => {
   }
   
   try {
-	const client = await clientPromise;
-	const data = JSON.parse(event.body);
-	data._id = parseInt(data._id)
+    const client = await clientPromise;
+    const data = JSON.parse(event.body);
+    data._id = parseInt(data._id)
     console.log(event.body)
 
-	await client.db("bookstore").collection("books").insertOne(data);
+    await client.db("bookstore").collection("books").insertOne(data);
 
     return { statusCode: 200, headers, body: 'OK'};
   } catch (error) {
