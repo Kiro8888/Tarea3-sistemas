@@ -24,15 +24,15 @@
             </div>
           </div>
           <div class="row">
-            <div class="six columns">
-              <label for="booksInput">Books</label>
-              <textarea class="u-full-width" rows="3" disabled>
-                <ul>
-                  <li v-for="book in publisher.books" :key="book.book_id">{{ book.title }}</li>
-                </ul>
-              </textarea>
+          <div class="six columns">
+            <label for="booksInput">Books</label>
+            <div class="u-full-width">
+              <ul>
+                <li v-for="book in publisher.books" :key="book.book_id">{{ book.title }}</li>
+              </ul>
             </div>
           </div>
+        </div>
           <div class="row">
             <router-link class="button button-primary" to="/publisher">Back</router-link>
             <a v-if="edit" class="button button-primary" style="float: right" v-on:click="updatePublisher(publisher._id)">Update</a>
@@ -52,7 +52,7 @@
     data() {
       return {
         title: "Publisher Data",
-        publisher: {}  // Aquí se almacenan los datos del publisher
+        publisher: {}  
       }
     },
     mounted() {
@@ -60,7 +60,6 @@
       if (route.params.id != null)
         this.findPublisher(route.params.id);
       else {
-        // Inicializar un nuevo publisher si se está creando
         this.publisher = {
           '_id': Math.floor(Math.random() * 100000000),
           'publisher': '',
@@ -72,17 +71,15 @@
       }
     },
     methods: {
-      // Obtener los detalles de un publisher por ID
       findPublisher: function(id) {
         fetch(this.url + '/.netlify/functions/publisherFind/' + id, {
           headers: { 'Accept': 'application/json' }
         })
         .then((response) => response.json())
         .then((items) => {
-          this.publisher = items[0];  // Asignar el primer publisher encontrado
+          this.publisher = items[0]; 
         });
       },
-      // Actualizar un publisher existente
       updatePublisher: function(id) {
         fetch(this.url + '/.netlify/functions/publisherUpdate/' + id, {
           headers: { 'Content-Type': 'application/json' },
@@ -93,7 +90,6 @@
           this.$router.push('/publisher');
         });
       },
-      // Crear un nuevo publisher
       createPublisher: function() {
         fetch(this.url + '/.netlify/functions/publisherInsert', {
           headers: { 'Content-Type': 'application/json' },

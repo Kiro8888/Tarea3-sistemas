@@ -10,7 +10,7 @@
               <th>Nationality</th>
               <th>Birth Year</th>
               <th>Fields</th>
-              <th>Books</th>
+              <!-- <th>Books</th> -->
               <th class="text-center">Actions</th>
             </tr>
           </thead>
@@ -20,11 +20,11 @@
               <td>{{author.nationality}}</td>
               <td>{{author.birth_year}}</td>
               <td>{{author.fields}}</td>
-              <td>
+              <!-- <td>
                 <ul>
                   <li v-for="book in author.books" :key="book.book_id">{{book.title}}</li>
                 </ul>
-              </td>
+              </td> -->
               <td>
                 <router-link class="button"
                   :to="'/author/show/'+author._id">Show</router-link>

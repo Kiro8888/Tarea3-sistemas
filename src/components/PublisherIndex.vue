@@ -9,7 +9,7 @@
               <th>Country</th>
               <th>Founded</th>
               <th>Genre</th>
-              <th>Books</th>
+              <!-- <th>Books</th> -->
               <th class="text-center">Actions</th>
             </tr>
           </thead>
@@ -19,13 +19,13 @@
               <td>{{ publisher.country }}</td>
               <td>{{ publisher.founded }}</td>
               <td>{{ publisher.genere }}</td>
-              <td>
+              <!-- <td>
                 <ul>
                   <li v-for="book in publisher.books" :key="book.book_id">
                     {{ book.title }}
                   </li>
                 </ul>
-              </td>
+              </td> -->
               <td>
                 <router-link class="button" :to="'/publisher/show/' + publisher._id">Show</router-link>
                 &nbsp;

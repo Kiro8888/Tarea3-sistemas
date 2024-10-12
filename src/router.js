@@ -36,7 +36,7 @@ const routes = [
 
   //publisher
   { path: "/publisher", component: PublisherIndex },
-  { path: "/book/show/:id", 
+  { path: "/publisher/show/:id", 
     component: PublisherDetails, props: {show:true} },
   { path: "/publisher/edit/:id", 
     component: PublisherDetails, props: {edit:true} },
