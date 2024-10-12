@@ -27,13 +27,13 @@
               </td>
               <td>
                 <router-link class="button"
-                  :to="'/author/show/'+author.id">Show</router-link>
+                  :to="'/author/show/'+author._id">Show</router-link>
                 &nbsp;
                 <router-link class="button"
-                  :to="'/author/edit/'+author.id">Edit</router-link>
+                  :to="'/author/edit/'+author._id">Edit</router-link>
                 &nbsp;
                 <a class="button"
-                  v-on:click="deleteAuthor(author.id)">Erase</a>
+                  v-on:click="deleteAuthor(author._id)">Erase</a>
               </td>
             </tr>
           </tbody>

@@ -35,7 +35,7 @@
           </div>
           <div class="row">
             <router-link class="button button-primary" to="/publisher">Back</router-link>
-            <a v-if="edit" class="button button-primary" style="float: right" v-on:click="updatePublisher(publisher.id)">Update</a>
+            <a v-if="edit" class="button button-primary" style="float: right" v-on:click="updatePublisher(publisher._id)">Update</a>
             <a v-if="create" class="button button-primary" style="float: right" v-on:click="createPublisher()">Create</a>
           </div>
         </form>
@@ -62,7 +62,7 @@
       else {
         // Inicializar un nuevo publisher si se está creando
         this.publisher = {
-          'id': Math.floor(Math.random() * 100000000),
+          '_id': Math.floor(Math.random() * 100000000),
           'publisher': '',
           'country': '',
           'founded': 0,

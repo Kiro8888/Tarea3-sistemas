@@ -27,11 +27,11 @@
                 </ul>
               </td>
               <td>
-                <router-link class="button" :to="'/publisher/show/' + publisher.id">Show</router-link>
+                <router-link class="button" :to="'/publisher/show/' + publisher._id">Show</router-link>
                 &nbsp;
-                <router-link class="button" :to="'/publisher/edit/' + publisher.id">Edit</router-link>
+                <router-link class="button" :to="'/publisher/edit/' + publisher._id">Edit</router-link>
                 &nbsp;
-                <a class="button" v-on:click="deletePublisher(publisher.id)">Erase</a>
+                <a class="button" v-on:click="deletePublisher(publisher._id)">Erase</a>
               </td>
             </tr>
           </tbody>

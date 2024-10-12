@@ -36,7 +36,7 @@
           </div>
           <div class="row">
             <router-link class="button button-primary" to="/author">Back</router-link>
-            <a v-if='edit' class="button button-primary" style="float: right" v-on:click="updateAuthor(author.id)">Update</a>
+            <a v-if='edit' class="button button-primary" style="float: right" v-on:click="updateAuthor(author._id)">Update</a>
             <a v-if='create' class="button button-primary" style="float: right" v-on:click="createAuthor()">Create</a>
           </div>
         </form>
@@ -62,7 +62,7 @@
         this.findAuthor(route.params.id);
       else {
         this.author = {
-          'id': Math.floor(Math.random() * 100000000),
+          '_id': Math.floor(Math.random() * 100000000),
           'author': '',
           'nationality': '',
           'birth_year': 0,
