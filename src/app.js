@@ -12,7 +12,7 @@ const myPassword = 'mypassword';
 
 // Configuración de CORS
 app.use(cors({
-    origin: 'http://localhost:3000', // Permite solo las solicitudes desde este origen
+    origin: 'https://tarea5sistemas.netlify.app', // Permite solo las solicitudes desde este origen
     credentials: true // Permite el uso de cookies
 }));
 

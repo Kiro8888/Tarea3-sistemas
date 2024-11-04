@@ -25,7 +25,7 @@ export default {
   name: "App",
   methods: {
     async logout() {
-      const response = await fetch('http://localhost:3000/logout', { method: 'GET', credentials: 'include' });
+      const response = await fetch('https://tarea5sistemas.netlify.app/logout', { method: 'GET', credentials: 'include' });
 
       if (response.ok) {
         removeSession();
