@@ -1,7 +1,6 @@
 // netlify/functions/login.js
 const cookie = require('cookie');
 const sessions = require('express-session');
-const { Handler } = require('@netlify/functions');
 
 // Configuración de la sesión en serverless
 const sessionConfig = sessions({
