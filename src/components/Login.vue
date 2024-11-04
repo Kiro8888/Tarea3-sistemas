@@ -21,27 +21,25 @@ export default {
   },
   methods: {
     async login() {
-      // Envía las credenciales al servidor para iniciar sesión
-      const response = await fetch('/.netlify/functions/login', {
+    const response = await fetch('/.netlify/functions/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          username: this.username,
-          password: this.password
+            username: this.username,
+            password: this.password
         })
-      });
+    });
 
-      if (response.ok) {
-        // Si la respuesta es correcta, guarda la sesión y redirige
+    if (response.ok) {
         setSession(true);
-        this.$router.push('/'); 
-      } else {
-        // Si hay un error, muestra un mensaje
-        alert('Invalid username or password');
-      }
+        this.$router.push('/');
+    } else {
+        alert('Usuario o contraseña inválidos');
     }
+}
+
   }
 };
 </script>
