@@ -22,7 +22,7 @@ export default {
   methods: {
     async login() {
       // Envía las credenciales al servidor para iniciar sesión
-      const response = await fetch('https://tarea5sistemassss.netlify.app/login', {
+      const response = await fetch('/.netlify/functions/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
